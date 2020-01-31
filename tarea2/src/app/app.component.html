@@ -1,0 +1,37 @@
+<div class="example-container">
+    <mat-toolbar color="primary" class="example-toolbar" >
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+            <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+        </button>
+
+        <h1 class="example-app-name">Ventas</h1>
+
+        <span class="example-spacer"></span> 
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #sidenav style="width: 200px">
+            <img src="http://2.bp.blogspot.com/-fNDZNGN7daY/Ub6TE4_uvdI/AAAAAAAABV8/yBhuHF4p6_U/s400/paso-a--paso1.jpg" width="128" style="margin-left: 20px">
+
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/persona" style="cursor: pointer">
+                <mat-icon>accesibility</mat-icon>
+                <span>Persona</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/producto" style="cursor: pointer">
+                <mat-icon>work_outline</mat-icon>
+                <span>Producto</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/venta" style="cursor: pointer">
+                <mat-icon>description</mat-icon>
+                <span>Venta</span>
+            </button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
